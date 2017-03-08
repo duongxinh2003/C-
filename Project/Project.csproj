@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="com.gui\AddAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.gui\AddAgent.Designer.cs">
+      <DependentUpon>AddAgent.cs</DependentUpon>
+    </Compile>
     <Compile Include="com.gui\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="com.gui\AddAgent.resx">
+      <DependentUpon>AddAgent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="com.gui\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

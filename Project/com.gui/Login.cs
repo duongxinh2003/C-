@@ -36,6 +36,7 @@ namespace Project.com.gui
                    if(radioButton1.Checked == true)
                         {
                             Home h = (Home) this.MdiParent;
+                            h.SetTextUser = username;
                             h.EnableAdminMenu = false;
                             h.EnableLoginMenu = false;
                             h.EnableLogoutMenu = true;
@@ -46,6 +47,7 @@ namespace Project.com.gui
                    if (radioButton1.Checked == false)
                         {
                             Home h = (Home)this.MdiParent;
+                            h.SetTextUser = username;
                             h.EnableAdminMenu = true;
                             h.EnableLoginMenu = false;
                             h.EnableLogoutMenu = true;
