@@ -34,7 +34,6 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,19 +42,21 @@
             this.passengerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPassengerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePassengerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBookingByPassengerNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewRouteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateARouteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewAgentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewAgentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listByRouteIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewAgentToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -113,18 +114,6 @@
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
             this.userToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
             this.userToolStripMenuItem.Text = "User";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.routeToolStripMenuItem,
-            this.addNewAgentToolStripMenuItem,
-            this.addNewAgentToolStripMenuItem1,
-            this.addNewCityToolStripMenuItem,
-            this.addNewAgentToolStripMenuItem2});
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.adminToolStripMenuItem.Text = "Admin";
             // 
             // addNewBookingToolStripMenuItem
             // 
@@ -184,17 +173,29 @@
             this.updatePassengerInfoToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.updatePassengerInfoToolStripMenuItem.Text = "Update Passenger Info";
             // 
+            // viewBookingByPassengerNameToolStripMenuItem
+            // 
+            this.viewBookingByPassengerNameToolStripMenuItem.Name = "viewBookingByPassengerNameToolStripMenuItem";
+            this.viewBookingByPassengerNameToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
+            this.viewBookingByPassengerNameToolStripMenuItem.Text = "View Booking by Passenger Name";
+            // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.changePasswordToolStripMenuItem.Text = "Change password";
             // 
-            // viewBookingByPassengerNameToolStripMenuItem
+            // adminToolStripMenuItem
             // 
-            this.viewBookingByPassengerNameToolStripMenuItem.Name = "viewBookingByPassengerNameToolStripMenuItem";
-            this.viewBookingByPassengerNameToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
-            this.viewBookingByPassengerNameToolStripMenuItem.Text = "View Booking by Passenger Name";
+            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.routeToolStripMenuItem,
+            this.addNewAgentToolStripMenuItem,
+            this.addNewAgentToolStripMenuItem1,
+            this.addNewCityToolStripMenuItem,
+            this.addNewAgentToolStripMenuItem2});
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.adminToolStripMenuItem.Text = "Admin";
             // 
             // routeToolStripMenuItem
             // 
@@ -227,15 +228,6 @@
             this.addNewAgentToolStripMenuItem.Text = "Bus";
             this.addNewAgentToolStripMenuItem.Click += new System.EventHandler(this.addNewAgentToolStripMenuItem_Click);
             // 
-            // addNewAgentToolStripMenuItem1
-            // 
-            this.addNewAgentToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listByRouteIDToolStripMenuItem,
-            this.listByToolStripMenuItem});
-            this.addNewAgentToolStripMenuItem1.Name = "addNewAgentToolStripMenuItem1";
-            this.addNewAgentToolStripMenuItem1.Size = new System.Drawing.Size(190, 26);
-            this.addNewAgentToolStripMenuItem1.Text = "Passenger";
-            // 
             // addNewBusToolStripMenuItem
             // 
             this.addNewBusToolStripMenuItem.Name = "addNewBusToolStripMenuItem";
@@ -247,6 +239,15 @@
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.updateToolStripMenuItem.Text = "Update A City Bus";
+            // 
+            // addNewAgentToolStripMenuItem1
+            // 
+            this.addNewAgentToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listByRouteIDToolStripMenuItem,
+            this.listByToolStripMenuItem});
+            this.addNewAgentToolStripMenuItem1.Name = "addNewAgentToolStripMenuItem1";
+            this.addNewAgentToolStripMenuItem1.Size = new System.Drawing.Size(190, 26);
+            this.addNewAgentToolStripMenuItem1.Text = "Passenger";
             // 
             // listByRouteIDToolStripMenuItem
             // 
@@ -271,12 +272,23 @@
             this.addNewAgentToolStripMenuItem2.Name = "addNewAgentToolStripMenuItem2";
             this.addNewAgentToolStripMenuItem2.Size = new System.Drawing.Size(190, 26);
             this.addNewAgentToolStripMenuItem2.Text = "Add New Agent";
+            this.addNewAgentToolStripMenuItem2.Click += new System.EventHandler(this.addNewAgentToolStripMenuItem2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(562, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.TabIndex = 2;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 456);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -319,6 +331,7 @@
         private System.Windows.Forms.ToolStripMenuItem listByToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewAgentToolStripMenuItem2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

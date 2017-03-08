@@ -15,7 +15,13 @@ namespace Project
         public Home()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             userToolStripMenuItem.Enabled = adminToolStripMenuItem.Enabled = logoutToolStripMenuItem.Enabled = false;
+        }
+
+        public string SetTextUser
+        {
+            set { label1.Text = value; }
         }
 
         public bool EnableUserMenu
@@ -53,6 +59,7 @@ namespace Project
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.SetTextUser = "";
             this.EnableLoginMenu = true;
             this.EnableAdminMenu = false;
             this.EnableUserMenu = false;
@@ -67,6 +74,14 @@ namespace Project
         private void addNewAgentToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNewAgentToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AddAgent aa = new AddAgent(label1.Text);
+            aa.MdiParent = this;
+            aa.StartPosition = FormStartPosition.CenterScreen;
+            aa.Show();
         }
     }
 }
