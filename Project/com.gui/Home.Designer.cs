@@ -166,12 +166,14 @@
             this.addNewPassengerToolStripMenuItem.Name = "addNewPassengerToolStripMenuItem";
             this.addNewPassengerToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.addNewPassengerToolStripMenuItem.Text = "Add New Passenger";
+            this.addNewPassengerToolStripMenuItem.Click += new System.EventHandler(this.addNewPassengerToolStripMenuItem_Click);
             // 
             // updatePassengerInfoToolStripMenuItem
             // 
             this.updatePassengerInfoToolStripMenuItem.Name = "updatePassengerInfoToolStripMenuItem";
             this.updatePassengerInfoToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.updatePassengerInfoToolStripMenuItem.Text = "Update Passenger Info";
+            this.updatePassengerInfoToolStripMenuItem.Click += new System.EventHandler(this.updatePassengerInfoToolStripMenuItem_Click);
             // 
             // viewBookingByPassengerNameToolStripMenuItem
             // 
@@ -266,6 +268,7 @@
             this.addNewCityToolStripMenuItem.Name = "addNewCityToolStripMenuItem";
             this.addNewCityToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.addNewCityToolStripMenuItem.Text = "Add New City";
+            this.addNewCityToolStripMenuItem.Click += new System.EventHandler(this.addNewCityToolStripMenuItem_Click);
             // 
             // addNewAgentToolStripMenuItem2
             // 

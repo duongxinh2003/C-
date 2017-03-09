@@ -9,23 +9,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace Project.com.gui
+namespace Project
 {
-    public partial class AddAgent : Form
+    public partial class AddNewCity : Form
     {
-        private string user;
         string connectionString = ConfigurationManager.ConnectionStrings["BookingConnectionString"].ConnectionString;
 
-        public AddAgent()
+        public AddNewCity()
         {
-
-        }
-
-        public AddAgent(string SetTextUser)
-        {
-            // TODO: Complete member initialization
             InitializeComponent();
-            this.user = SetTextUser;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,7 +29,7 @@ namespace Project.com.gui
         {
             if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
             {
-                MessageBox.Show("City name or National ID not be blank.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("City name or National ID not be blank.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
@@ -45,21 +37,21 @@ namespace Project.com.gui
                 {
                     SqlConnection conn = new SqlConnection(connectionString);
                     conn.Open();
-                    string sql = "INSERT INTO [Booking].[dbo].[Account]"
-                             + " VALUES (@username,@password,'True')";
+                    string sql = "insert into [dbo].[City] (national_Id, city_Name)"
+                                + " values (@nationalId,@cityName)";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@username", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@password", textBox2.Text);
+                    cmd.Parameters.AddWithValue("@nationalId", textBox2.Text);
+                    cmd.Parameters.AddWithValue("@cityName", textBox1.Text);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Add successfull!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Username has been existed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    MessageBox.Show("Nationnal ID is not true, please check again!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
-
         }
     }
 }

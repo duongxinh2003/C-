@@ -83,5 +83,29 @@ namespace Project
             aa.StartPosition = FormStartPosition.CenterScreen;
             aa.Show();
         }
+
+        private void addNewPassengerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewPassenger anp = new AddNewPassenger(label1.Text);
+            anp.MdiParent = this;
+            anp.StartPosition = FormStartPosition.CenterScreen;
+            anp.Show();
+        }
+
+        private void updatePassengerInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdatePassenger udp = new UpdatePassenger(label1.Text);
+            udp.MdiParent = this;
+            udp.StartPosition = FormStartPosition.CenterScreen;
+            udp.Show();
+        }
+
+        private void addNewCityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewCity anc = new AddNewCity();
+            anc.MdiParent = this;
+            anc.StartPosition = FormStartPosition.CenterScreen;
+            anc.Show();
+        }
     }
 }
