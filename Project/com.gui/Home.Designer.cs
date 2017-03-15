@@ -186,6 +186,7 @@
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.changePasswordToolStripMenuItem.Text = "Change password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -213,12 +214,14 @@
             this.addNewRouteToolStripMenuItem.Name = "addNewRouteToolStripMenuItem";
             this.addNewRouteToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.addNewRouteToolStripMenuItem.Text = "Add New Route";
+            this.addNewRouteToolStripMenuItem.Click += new System.EventHandler(this.addNewRouteToolStripMenuItem_Click);
             // 
             // updateARouteToolStripMenuItem
             // 
             this.updateARouteToolStripMenuItem.Name = "updateARouteToolStripMenuItem";
             this.updateARouteToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.updateARouteToolStripMenuItem.Text = "Update A Route";
+            this.updateARouteToolStripMenuItem.Click += new System.EventHandler(this.updateARouteToolStripMenuItem_Click);
             // 
             // addNewAgentToolStripMenuItem
             // 
@@ -235,6 +238,7 @@
             this.addNewBusToolStripMenuItem.Name = "addNewBusToolStripMenuItem";
             this.addNewBusToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.addNewBusToolStripMenuItem.Text = "Add New City bus";
+            this.addNewBusToolStripMenuItem.Click += new System.EventHandler(this.addNewBusToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 

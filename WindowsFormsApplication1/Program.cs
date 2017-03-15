@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Project
+namespace WindowsFormsApplication1
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new com.gui.AddCityBus());
+            Application.Run(new Form1());
         }
     }
 }

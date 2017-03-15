@@ -107,5 +107,34 @@ namespace Project
             anc.StartPosition = FormStartPosition.CenterScreen;
             anc.Show();
         }
+
+        private void addNewRouteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewRoute anr = new AddNewRoute();
+            anr.MdiParent = this;
+            anr.StartPosition = FormStartPosition.CenterScreen;
+            anr.Show();
+        }
+
+        private void updateARouteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateARoute ur = new UpdateARoute();
+            ur.MdiParent = this;
+            ur.StartPosition = FormStartPosition.CenterScreen;
+            ur.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePassword cp = new ChangePassword(label1.Text);
+            cp.MdiParent = this;
+            cp.StartPosition = FormStartPosition.CenterScreen;
+            cp.Show();
+        }
+
+        private void addNewBusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
