@@ -134,7 +134,18 @@ namespace Project
 
         private void addNewBusToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AddCityBus acb = new AddCityBus();
+            acb.MdiParent = this;
+            acb.StartPosition = FormStartPosition.CenterScreen;
+            acb.Show();
+        }
 
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateCityBus ucb = new UpdateCityBus();
+            ucb.MdiParent = this;
+            ucb.StartPosition = FormStartPosition.CenterScreen;
+            ucb.Show();
         }
     }
 }

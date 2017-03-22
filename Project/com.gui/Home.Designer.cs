@@ -245,6 +245,7 @@
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.updateToolStripMenuItem.Text = "Update A City Bus";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // addNewAgentToolStripMenuItem1
             // 

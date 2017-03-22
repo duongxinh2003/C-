@@ -11,17 +11,15 @@ using System.Configuration;
 
 namespace Project.com.gui
 {
-    public partial class AddCityBus : Form
+    public partial class UpdateCityBus : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["BookingConnectionString"].ConnectionString;
         DataSet ds = null;
-        string route = " to ";
 
-        public AddCityBus()
+        public UpdateCityBus()
         {
             InitializeComponent();
-            label6.Text = getCode();
-            string sql = "select * from Route";
+            string sql = "select * from Route ; select * from Bus";
             SqlDataAdapter da = new SqlDataAdapter(sql, connectionString);
             ds = new DataSet();
             da.Fill(ds);
@@ -29,7 +27,15 @@ namespace Project.com.gui
             comboBox1.DataSource = ds.Tables[0];
             comboBox1.DisplayMember = "route_Name";
             comboBox1.ValueMember = "route_Id";
+            comboBox2.DataSource = ds.Tables[1];
+            comboBox2.DisplayMember = "bus_Id";
+            comboBox2.ValueMember = "bus_Id";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+        }
+
+        void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
         }
 
@@ -40,34 +46,13 @@ namespace Project.com.gui
                                     + "JOIN City  "
                                     + "ON r.from_City = City.city_Id "
                                     + "JOIN City c " + " ON r.to_City = c.city_Id "
-                                    + "where r.route_Id = '" + comboBox1.Text +"'";
+                                    + "where r.route_Id = '" + comboBox1.Text + "'";
             SqlDataAdapter da = new SqlDataAdapter(getFromCity, connectionString);
             DataTable dt = new DataTable();
             da.Fill(dt);
             string fromCity = (string)dt.Rows[0]["FromCity"];
             string toCity = (string)dt.Rows[0]["ToCity"];
-            textBox1.Text = fromCity + route + toCity;
-        }
-
-        public static string getCode()
-        {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, 5).Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        public bool checkCode(string code)
-        {
-            string sql = "select * from Bus where bus_Id = '" + code + "' ";
-            SqlDataAdapter da = new SqlDataAdapter(sql, connectionString);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
-            {
-                return false;
-            }
-            else
-                return true;
+            textBox1.Text = fromCity + " to " + toCity;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,33 +67,28 @@ namespace Project.com.gui
             {
                 MessageBox.Show("Fare is invalid, please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (checkCode(label6.Text) == false)
-            {
-                MessageBox.Show("Error, Bus ID have been used. Please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                label6.Text = getCode();
-            }
             else
             {
                 try
                 {
                     SqlConnection conn = new SqlConnection(connectionString);
                     conn.Open();
-                    string sql = "INSERT INTO [Booking].[dbo].[Bus] "
-                                + "VALUES(@busID,@routeID,@fare)";
+                    string sql = "UPDATE [Booking].[dbo].[Bus] "
+                                + "SET [route_Id] = @routeID,[fare] = @fare "
+                                + "WHERE bus_Id = @busID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@busID", label6.Text);
+                    cmd.Parameters.AddWithValue("@busID", comboBox2.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@routeID", comboBox1.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@fare", textBox2.Text);
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Add city bus successfull!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Update city bus successfull!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }   
-            
+            }
         }
     }
 }

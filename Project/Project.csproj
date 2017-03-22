@@ -117,6 +117,12 @@
     <Compile Include="com.gui\UpdateARoute.Designer.cs">
       <DependentUpon>UpdateARoute.cs</DependentUpon>
     </Compile>
+    <Compile Include="com.gui\UpdateCityBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.gui\UpdateCityBus.Designer.cs">
+      <DependentUpon>UpdateCityBus.cs</DependentUpon>
+    </Compile>
     <Compile Include="com.gui\UpdatePassenger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="com.gui\UpdateARoute.resx">
       <DependentUpon>UpdateARoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.gui\UpdateCityBus.resx">
+      <DependentUpon>UpdateCityBus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="com.gui\UpdatePassenger.resx">
       <DependentUpon>UpdatePassenger.cs</DependentUpon>
